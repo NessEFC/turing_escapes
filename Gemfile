@@ -8,7 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
-gem 'rubocop', '~> 0.48.1', require: false 
+gem 'rubocop', '~> 0.48.1', require: false
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -22,7 +22,6 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
-gem 'awesome_print', require: 'ap'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -49,7 +48,7 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'awesome_print'
+  gem 'awesome_print', require:'ap'
   gem "nyan-cat-formatter"
 end
 
