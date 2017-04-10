@@ -50,6 +50,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'awesome_print', require:'ap'
   gem "nyan-cat-formatter"
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'faker'
 end
 
 group :development do

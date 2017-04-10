@@ -1,0 +1,15 @@
+<h1>Escapes</h1>
+
+<ul>
+  <% @escapes.each do |escape| %>
+    <div class="escape">
+      <%= escape.name %>
+        <ul>
+          <li><%= escape.description %></li>
+          <li><%= escape.price %></li>
+          <li><%= escape.city %></li>
+          <li><%= image_tag escape.image %></li>
+        </ul>
+    </div>
+  <% end %>
+</ul>
