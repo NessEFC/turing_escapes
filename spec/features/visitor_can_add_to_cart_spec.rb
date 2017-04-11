@@ -3,28 +3,23 @@ require 'rails_helper'
 RSpec.feature "As a visitor" do
   scenario "they can add escapes to the cart" do
 
-    escape_1 = Escape.create(name: "Gentle Dawn", description: "The gentlest of dawns.", price: 200.00, city: "Denver", image: "image.url")
-    escape_2 = Escape.create(name: "Cuba", description: "Communist Cuba!", price: 10.00, city: "Havana", image: "image.url")
+    escape_1, escape_2 = create_list(:escape, 2)
 
     visit escape_path(escape_1)
-
     click_on "Book Escape"
 
     visit escape_path(escape_2)
-
     click_on "Book Escape"
+
     visit escape_path(escape_2)
 
     click_on "View Cart"
 
-
     expect(current_path).to eq "/cart"
-
-    expect(page).to have_content("Cuba")
-    expect(page).to have_content("Havana")
-    expect(page).to have_content("Communist Cuba!")
-    expect(page).to have_content("10.0")
-    expect(page).to have_content("Total: $210.0")
-
+    expect(page).to have_content(escape_2.name)
+    expect(page).to have_content(escape_2.city)
+    expect(page).to have_content(escape_2.description)
+    expect(page).to have_content(escape_2.price)
+    expect(page).to have_content("Total: $400.0")
   end
 end
