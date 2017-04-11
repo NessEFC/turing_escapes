@@ -3,12 +3,14 @@
 <ul>
   <% @escapes.each do |escape| %>
     <div class="escape">
-      <%= escape.name %>
+      <h4><%= link_to escape.name, escape_path(escape) %></h4>
         <ul>
-          <li><%= escape.description %></li>
-          <li><%= escape.price %></li>
-          <li><%= escape.city %></li>
-          <li><%= image_tag escape.image %></li>
+          <%= image_tag escape.image %>
+          <li>Description: <%= escape.description %></li>
+          <li>Price: <%= escape.price %></li>
+          <li>City: <%= escape.city %></li>
+          <%= button_to "Book Escape", cart_path(escape_id: escape.id), class: "btn btn-danger" %><br>
+
         </ul>
     </div>
   <% end %>
