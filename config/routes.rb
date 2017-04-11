@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get '/cart', to: 'carts#index'
   post '/cart', to: 'carts#create'
+  delete '/cart', to: 'carts#destroy'
 
   get '/:category_name', to: 'categories#index'
 end
