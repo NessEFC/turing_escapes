@@ -23,7 +23,11 @@ class Cart
     contents.each do |id, count|
       cart_prices << Escape.find(id.to_i).price * count
     end
-    cart_prices.reduce(:+)
+    sprintf('%.2f', cart_prices.reduce(:+))
+  end
+
+  def remove_item(item_id)
+    contents.delete(item_id)
   end
 
 end
