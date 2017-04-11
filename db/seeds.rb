@@ -11,7 +11,7 @@ titles.each do |title|
                 description: Faker::GameOfThrones.dragon,
                 price: Faker::Number.decimal(2),
                 city: Faker::GameOfThrones.city,
-                image: Faker::Avatar.image,
+                image: Faker::Avatar.image
                )
 
   EscapeCategory.create(escape_id: escape.id, category_id: category.id)

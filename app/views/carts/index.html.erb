@@ -1,0 +1,24 @@
+<!-- if else for empty cart, link back to escapes  -->
+<!--  all added escapes listed here -->
+<% if @escapes.empty? %>
+<h5><%= "Your cart is empty" %></h5>
+<% else %>
+
+  <div class="cart items">
+    <% @escapes.each do |escape| %>
+      <h4><%= escape.name %></h4>
+      <p><%= image_tag escape.image %></p>
+      <p>City: <%= escape.city %></p>
+      <p>Price: $<%= escape.price %></p>
+      <p>Description: <%= escape.description %></p>
+      <%= button_to "Remove Escape", cart_path({escape_id: escape.id}), method: :delete, class: "btn orange-btn"%>
+    <% end %>
+  </div>
+ <% end %>
+
+<hr>
+<% if @escapes.empty? %>
+  <p>Cart Total: $0.00</p>
+<% else %>
+  <p>Cart Total: $<%= @cart.total_price %></p>
+<% end %>

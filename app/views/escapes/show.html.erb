@@ -1,0 +1,10 @@
+<h1><%= @escape.name %></h1>
+
+<h3><%= @escape.city %></h3>
+
+<%= image_tag @escape.image %>
+<%= @escape.price %>
+
+<%= @escape.description %>
+
+<%= button_to "Book Escape", cart_path(escape_id: @escape.id), class: "btn btn-danger" %><br>
