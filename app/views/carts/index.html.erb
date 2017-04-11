@@ -5,3 +5,5 @@
 <%= @last_escape.description %>
 
 <p>Total: $<%= @cart.total_price %></p>
+
+<td><%= button_to "Remove Escape", cart_path({escape_id: escape}), method: :delete, class: "btn orange-btn"%><td>
