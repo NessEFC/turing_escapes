@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   def index
-    @last_escape = @cart.find_escapes.last
+    @escapes = @cart.find_escapes
   end
 
   def create
