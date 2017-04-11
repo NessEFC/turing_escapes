@@ -52,6 +52,7 @@ group :development, :test do
   gem "nyan-cat-formatter"
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
+  gem 'shoulda-matchers', '~> 3.0'
 end
 
 group :development do
