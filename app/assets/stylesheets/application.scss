@@ -17,6 +17,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$success: #008000;
+
 .success {
-  color: #008000;
+  color: $success;
 }
