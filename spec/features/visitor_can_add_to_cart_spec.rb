@@ -13,7 +13,6 @@ RSpec.feature "As a visitor" do
     visit escape_path(escape_2)
 
     click_on "Book Escape"
-    visit escape_path(escape_2)
 
     click_on "View Cart"
 
