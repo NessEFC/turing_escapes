@@ -13,7 +13,7 @@
     <div class="container">
       <ul class="nav nav-tabs">
         <li><%= link_to "Escape Packages", escapes_path %></li>
-        <li><%= link_to "View Cart", cart_path %></li>
+        <li><%= link_to "View Cart (#{@cart.cart_count})", cart_path %></li>
 
       </ul>
     <% flash.each do |name, msg| %>

@@ -46,4 +46,17 @@ class Cart
       contents[item_id.to_s] -= 1
     end
   end
+
+  def cart_count
+   if  contents.empty?
+      return 0
+   else 
+    item_count = []
+    contents.map do |id, count|
+      item_count << count
+    end
+    item_count.reduce(:+)
+   end
+  end
+  
 end
