@@ -19,7 +19,7 @@ class CartsController < ApplicationController
   def destroy
     escape = Escape.find(params[:escape_id])
     @cart.remove_item(params[:escape_id])
-    flash[:success] = "Successfully removed #{escape.name} from your cart."
+    flash[:success] = "Successfully removed #{view_context.link_to(escape.name, escape_path(escape))} from your cart."
     redirect_to cart_path
   end
 

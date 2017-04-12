@@ -17,7 +17,7 @@
 
       </ul>
     <% flash.each do |name, msg| %>
-      <h4><%= content_tag :div, msg, class: name %></h4>
+      <h4><%= content_tag :div, msg.html_safe, class: name %></h4>
     <% end %>
 
 
