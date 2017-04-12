@@ -39,6 +39,11 @@ class Cart
   end
 
   def decrease_quantity(item_id) #create model test
-   contents[item_id.to_s]  -= 1
+    if contents[item_id.to_s] == 1
+      remove_item(item_id.to_s)
+      
+    else
+      contents[item_id.to_s] -= 1
+    end
   end
 end
