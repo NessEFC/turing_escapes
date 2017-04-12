@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show, :update, :create, :destroy]
 
-  # get '/cart', to: 'carts#index'
-  # put '/cart', to: 'carts#update'
-  # post '/cart', to: 'carts#create'
-  # delete '/cart', to: 'carts#destroy'
+  resources :users, only: [:new, :create]
+
+  get '/login', to: 'sessions#new'
+  get '/dashboard', to: 'users#dashboard'
 
   get '/:category_name', to: 'categories#index'
 end
