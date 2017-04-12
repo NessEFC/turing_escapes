@@ -11,11 +11,7 @@
 
   <body>
     <div class="container">
-      <ul class="nav nav-tabs">
-        <li><%= link_to "Escape Packages", escapes_path %></li>
-        <li><%= link_to "View Cart (#{@cart.cart_count})", cart_path %></li>
-
-      </ul>
+      <%= render partial: "shared/navbar" %>
     <% flash.each do |name, msg| %>
       <h4><%= content_tag :div, msg.html_safe, class: name %></h4>
     <% end %>
