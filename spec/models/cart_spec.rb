@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Cart' do
   describe '.total_price' do
-    it 'returns the total prcie for all escapes in the cart' do
+    it 'returns the total price for all escapes in the cart' do
       escape_1, escape_2  = create_list(:escape, 2)  
       cart = Cart.new({escape_1.id.to_s => 1})
       cart.add_item(escape_1.id)

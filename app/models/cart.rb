@@ -30,4 +30,15 @@ class Cart
     contents.delete(item_id)
   end
 
+  def quantity(item_id) #create model test
+    contents[item_id.to_s]  
+  end
+
+  def subtotal(escape) #create model test
+    sprintf('%.2f', (escape.price * quantity(escape.id)))
+  end
+
+  def decrease_quantity(item_id) #create model test
+   contents[item_id.to_s]  -= 1
+  end
 end
