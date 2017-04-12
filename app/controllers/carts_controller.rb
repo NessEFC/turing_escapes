@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  def index
+  def show
     @escapes = @cart.find_escapes
   end
 
