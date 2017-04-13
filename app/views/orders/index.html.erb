@@ -1,0 +1,8 @@
+<h1>Order History</h1>
+
+<% @user.orders.each do |order| %>
+  <ul>
+    <%= order.id %>
+    <%= order.created_at %>
+  </ul>
+<% end %>
