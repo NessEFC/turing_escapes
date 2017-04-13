@@ -4,5 +4,6 @@
   <ul>
     <strong>Order #</strong><%= order.id %>
     <%= order.format_created_at %>
+    <%= link_to "View Order", order_path(order) %>
   </ul>
 <% end %>

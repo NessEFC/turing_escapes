@@ -1,0 +1,10 @@
+<h1>Order #<%= @order.id %></h1>
+
+Order Date: <%= @order.format_created_at %>
+Order Status: <%= @order.status %> at: <%= @order.format_updated_at %>
+Total Price: $500.00
+
+<% @order.escapes.each do |escape| %>
+  <%= link_to escape.name, escape_path(escape) %>
+  <p>1</p>
+<% end %>

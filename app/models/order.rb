@@ -6,4 +6,9 @@ class Order < ApplicationRecord
   def format_created_at
     created_at.strftime("%B %e, %Y")
   end
+
+  def format_updated_at
+    updated_at.strftime("%B %e, %Y")
+  end
+
 end

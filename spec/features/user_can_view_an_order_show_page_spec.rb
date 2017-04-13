@@ -7,7 +7,7 @@ RSpec.feature "As a logged-in user," do
     order = user.orders.create(status: "completed")
     escape = user.orders.first.escapes.create(name: "Gentle Dawn", description: "The gentlest of dawns.", price: 500.00, city: "San Diago", image: "url")
     quantity = 1
-    total = "500.00"
+    total = "$500.00"
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -22,10 +22,10 @@ RSpec.feature "As a logged-in user," do
     expect(page).to have_content(escape.name)
     expect(page).to have_content(quantity) # Will implement this feature with checkout button functionality
     expect(page).to have_link("Gentle Dawn")
-    expect(page).to have_content(status) # Will implement this feature later
+    expect(page).to have_content(order.status) # Will implement this feature later
     expect(page).to have_content(total)
-    expect(page).to have_content(order.created_at)
-    expect(page).to have_content("#{order.status} at: #{order.updated_at}")
+    expect(page).to have_content(order.format_created_at)
+    expect(page).to have_content("#{order.status} at: #{order.format_updated_at}")
 
   end
 end
