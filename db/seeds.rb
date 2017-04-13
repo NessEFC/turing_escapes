@@ -10,10 +10,11 @@ EscapeCategory.create(category_id: 2, escape_id: 2)
 
 User.create(username: "booradley", password: "asecretpassword", password_confirmation: "asecretpassword")
 
-User.last.orders.create
-User.last.orders.create
+User.last.orders.create(status: "paid")
+User.last.orders.create(status: "completed")
 
 User.last.orders.first.escapes << Escape.first
 User.last.orders.last.escapes << [Escape.first, Escape.last]
+
 
 puts "Seeds Updated! Nice work team..."
