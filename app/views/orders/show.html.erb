@@ -1,0 +1,15 @@
+<h1>Order #<%= @order.id %></h1>
+
+
+Order Date: <%= @order.format_created_at %><br>
+Order Status: <%= @order.status %>
+<% if @order.status == "cancelled" || @order.status == "completed" %>
+
+  <%="on #{@order.format_updated_at}" %><br>
+  <% end %><br>
+Total Price: $500.00<br>
+
+<% @order.escapes.each do |escape| %>
+  <%= link_to escape.name, escape_path(escape) %>
+  <p>1</p>
+<% end %>

@@ -12,7 +12,11 @@ class CartsController < ApplicationController
 
   def update
     escape = Escape.find(params[:escape_id])
-    @cart.decrease_quantity(escape.id)
+    if params[:quantity] == "decrease"
+      @cart.decrease_quantity(escape.id)
+    else
+      @cart.increase_quantity(escape.id)
+    end
     redirect_to cart_path
   end
 
