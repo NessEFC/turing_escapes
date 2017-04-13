@@ -6,5 +6,8 @@
 <%= @escape.price %>
 
 <%= @escape.description %>
-
-<%= button_to "Book Escape", cart_path(escape_id: @escape.id), class: "btn btn-danger" %><br>
+<% if @escape.active %>
+  <%= button_to "Book Escape", cart_path(escape_id: @escape.id), class: "btn btn-danger" %><br>
+<% else %>
+   <p>Escape Retired</p>
+<% end %>

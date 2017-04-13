@@ -4,6 +4,7 @@ FactoryGirl.define do
       "Escape #{n}"
     end
 
+
     sequence :description do |n|
       "Description #{n}"
     end
@@ -15,6 +16,8 @@ FactoryGirl.define do
     end
 
     image "image.url"
+
+    active true 
   end
 
   sequence :category_title do |n|
