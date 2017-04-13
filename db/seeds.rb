@@ -1,22 +1,9 @@
-require 'faker'
+Escape.create(name: "Gentle Dawn", description: "The gentlest of dawns.", city: "Denver", price: 200.00, image: "gentle_dawn.jpg")
 
-titles = []
-2.times do
-  titles << Faker::GameOfThrones.house
-end
+Escape.create(name: "Basement Dweller", description: "Enjoy the fluorescent lighting!", city: "Denver", price: 1.00, image: "basement_dweller.jpg")
 
-titles.each do |title|
-  category = Category.create(title: title)
-  escape = Escape.create(name: Faker::GameOfThrones.house,
-                description: Faker::GameOfThrones.dragon,
-                price: Faker::Number.decimal(2),
-                city: Faker::GameOfThrones.city,
-                image: Faker::Avatar.image
-               )
+Category.create(title: "Outdoors")
+Category.create(title: "Indoors")
 
-  EscapeCategory.create(escape_id: escape.id, category_id: category.id)
-end
-
-
-puts "Seed finished"
-puts "#{Escape.count} categories created"
+EscapeCategory.create(category_id: 1, escape_id: 1)
+EscapeCategory.create(category_id: 2, escape_id: 2)
