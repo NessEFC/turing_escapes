@@ -49,7 +49,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'awesome_print', require:'ap'
-  gem "nyan-cat-formatter"
+  gem 'nyan-cat-formatter'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
   gem 'shoulda-matchers', '~> 3.0'

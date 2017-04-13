@@ -3,6 +3,6 @@
 <% @user.orders.reverse.each do |order| %>
   <ul>
     <strong>Order #</strong><%= order.id %>
-    <%= order.created_at.strftime("%B %e, %Y") %>
+    <%= order.format_created_at %>
   </ul>
 <% end %>

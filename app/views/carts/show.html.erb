@@ -13,8 +13,9 @@
       <p>Description: <%= escape.description %></p>
       <p>Quantity: <%= @cart.quantity(escape.id) %></p>
       <p>Subtotal: $<%= @cart.subtotal(escape) %>
-      <%= button_to "Decrease Quantity", cart_path({escape_id: escape.id}), method: :put, class: "btn orange-btn"%>
-      <%= button_to "Remove Escape", cart_path({escape_id: escape.id}), method: :delete, class: "btn btn-danger"%>
+      <%= button_to "Increase Quantity", cart_path({escape_id: escape.id}), method: :put, class: "btn orange-btn", params: {quantity: :increase} %>
+      <%= button_to "Decrease Quantity", cart_path({escape_id: escape.id}), method: :put, class: "btn orange-btn", params: {quantity: :decrease} %>
+      <%= button_to "Remove Escape", cart_path({escape_id: escape.id}), method: :delete, class: "btn btn-danger" %>
     <% end %>
   </div>
  <% end %>

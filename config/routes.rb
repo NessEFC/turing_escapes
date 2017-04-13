@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'escapes#index'
+  
   resources :escapes, only: [:index, :show]
 
   resource :cart, only: [:show, :update, :create, :destroy]

@@ -9,11 +9,7 @@ RSpec.feature "As a logged-in user," do
     quantity = 1
     total = "500.00"
 
-    visit login_path
-
-    fill_in "session[username]", with: "TheUkrainian"
-    fill_in "session[password]", with: "asecretpassword"
-    click_on "Log In"
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit orders_path
 
