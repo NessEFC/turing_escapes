@@ -1,8 +1,8 @@
 <h1>Order History</h1>
 
-<% @user.orders.each do |order| %>
+<% @user.orders.reverse.each do |order| %>
   <ul>
-    <%= order.id %>
-    <%= order.created_at %>
+    <strong>Order #</strong><%= order.id %>
+    <%= order.created_at.strftime("%B %e, %Y") %>
   </ul>
 <% end %>
