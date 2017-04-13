@@ -29,4 +29,18 @@ FactoryGirl.define do
     end
   end
 
+  factory :user do
+    username "TheUkrainian"
+    password "asecretpassword"
+    password_confirmation "asecretpassword"
+  end
+
+  factory :order do
+    user
+
+    factory :order_with_escapes do
+      escapes { create_list(:escape, 2) }
+    end
+  end
+
 end
