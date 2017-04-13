@@ -6,3 +6,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of(:password) }
   end
 end
+
+RSpec.describe User, "associations", type: :model do
+  it { should has_many(:order) }
+end

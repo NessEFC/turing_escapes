@@ -21,6 +21,5 @@ RSpec.feature "As a logged-in user" do
     expect(page).to have_content(order_1.created_at)
     expect(page).to have_content(order_2.id)
     expect(page).to have_content(order_2.created_at)
-
   end
 end
