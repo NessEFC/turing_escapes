@@ -25,7 +25,7 @@ RSpec.feature "As a logged-in user," do
     expect(page).to have_content(order.status) # Will implement this feature later
     expect(page).to have_content(total)
     expect(page).to have_content(order.format_created_at)
-    expect(page).to have_content("#{order.status} at: #{order.format_updated_at}")
+    expect(page).to have_content("#{order.status} on #{order.format_updated_at}")
 
   end
 end
