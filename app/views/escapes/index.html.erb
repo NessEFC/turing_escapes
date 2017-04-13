@@ -7,7 +7,7 @@
         <ul>
           <%= image_tag escape.image %>
           <li>Description: <%= escape.description %></li>
-          <li>Price: <%= escape.price %></li>
+          <li>Price: $<%= sprintf('%.2f', escape.price) %></li>
           <li>City: <%= escape.city %></li>
           <%= button_to "Book Escape", cart_path(escape_id: escape.id), class: "btn btn-danger" %><br>
 
