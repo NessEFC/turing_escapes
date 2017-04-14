@@ -28,7 +28,7 @@
 <% end %>
 
 <% if current_user %>
-  <%= button_to "Checkout", escapes_path, method: :get, class: "btn btn-green"%>
+  <%= button_to "Checkout", orders_path, method: :get, class: "btn btn-green"%>
 <% else %>
   <%= link_to "Login or Create Account to Proceed", login_path%>
 <% end %>
