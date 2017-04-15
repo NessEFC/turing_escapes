@@ -10,11 +10,11 @@ EscapeCategory.create(category_id: 2, escape_id: 2)
 
 User.create(username: "booradley", password: "asecretpassword", password_confirmation: "asecretpassword")
 
-User.last.orders.create(status: "paid")
-User.last.orders.create(status: "completed")
+User.last.orders.create(status: "paid", total: 200.00)
+User.last.orders.create(status: "completed", total: 202.00)
 
-User.last.orders.first.escapes << Escape.first
-User.last.orders.last.escapes << [Escape.first, Escape.last]
-
+User.last.orders.first.order_escapes.create(escape_id: Escape.first.id, quantity: 1, total: 200.00)
+User.last.orders.last.order_escapes.create(escape_id: Escape.last.id, quantity: 2, total: 2.00)
+User.last.orders.last.order_escapes.create(escape_id: Escape.first.id, quantity: 1, total: 200.00)
 
 puts "Seeds Updated! Nice work team..."

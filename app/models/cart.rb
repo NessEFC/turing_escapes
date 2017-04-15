@@ -61,4 +61,5 @@ class Cart
     item_count.reduce(:+)
    end
   end
+
 end

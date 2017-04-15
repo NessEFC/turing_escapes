@@ -11,4 +11,11 @@ class Order < ApplicationRecord
     updated_at.strftime("%B %e, %Y")
   end
 
+  def subtotal(escape_id, quantity)
+    sprintf('%.2f', (Escape.find(escape_id).price * quantity))
+  end
+
+  def format_total
+    sprintf('%.2f', total )
+  end
 end
