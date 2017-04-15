@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show, :create]
 
+  namespace :admin do
+    resource :dashboard, only: [:show]
+  end
+
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
