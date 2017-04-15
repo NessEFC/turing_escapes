@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe OrderEscape, type: :model do
   context "validations" do
-    xit { is_expected.to validate_presence_of(:total) }
-    xit { is_expected.to validate_presence_of(:quantity) }
+    it { is_expected.to validate_presence_of(:total) }
+    it { is_expected.to validate_presence_of(:quantity) }
   end
 end
 

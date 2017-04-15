@@ -11,9 +11,9 @@ class Cart
   end
 
   def find_escapes
-    cart_items = {}
+    cart_items = []
     contents.each do |id, count|
-      cart_items[Escape.find(id.to_i)] = count
+      cart_items << Escape.find(id.to_i)
     end
     cart_items
   end
