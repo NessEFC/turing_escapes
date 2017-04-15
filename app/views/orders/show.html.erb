@@ -1,5 +1,5 @@
-<h1>Order #<%= @order.id %></h1>
 
+<h1>Order #<%= @order.id %></h1>
 
 Order Date: <%= @order.format_created_at %><br>
 Order Status: <%= @order.status %>
@@ -8,10 +8,6 @@ Order Status: <%= @order.status %>
   <%="on #{@order.format_updated_at}" %><br>
   <% end %><br>
 Total Price: $<%= @order.format_total%><br>
-
-<%#<%# @order.escapes.each do |escape| %>
-  <%#= link_to escape.name, escape_path(escape) %>
-<%# end %>
 
 <% @order.order_escapes.each do |order_escape| %>
  <%= link_to Escape.find(order_escape.escape_id).name, escape_path(order_escape.escape.id)%>

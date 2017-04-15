@@ -1,3 +1,7 @@
+<% if !current_user%>
+  <p>Log in to view past orders</p>
+<% else %>
+
 <h1>Order History</h1>
 
 <% @user.orders.reverse.each do |order| %>
@@ -6,4 +10,5 @@
     <%= order.format_created_at %>
     <%= link_to "View Order", order_path(order) %>
   </ul>
+<% end %>
 <% end %>
