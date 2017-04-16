@@ -18,4 +18,8 @@ class Order < ApplicationRecord
   def format_total
     sprintf('%.2f', total )
   end
+
+  def self.find_status(status)
+    where(status: status)
+  end
 end

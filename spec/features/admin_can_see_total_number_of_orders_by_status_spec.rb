@@ -21,7 +21,12 @@ RSpec.feature "As admin" do
 
     visit admin_dashboard_path
 
-    expect(page).to have_link("Order #1")
-    expect(page).to have_link("Order #2")
+    expect(page).to have_content("Ordered: 0")
+    expect(page).to have_content("Paid: 1")
+    expect(page).to have_content("Completed: 1")
+    expect(page).to have_content("Cancelled: 0")
+
+
   end
+  
 end
