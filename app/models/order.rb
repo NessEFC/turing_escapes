@@ -3,6 +3,8 @@ class Order < ApplicationRecord
   has_many :escapes, through: :order_escapes
   belongs_to :user
 
+  scope :find_status, -> (status) {where status: status}
+
   def format_created_at
     created_at.strftime("%B %e, %Y")
   end
