@@ -15,6 +15,18 @@ Username: <%= current_user.username %>
 <%= button_to "Completed", admin_dashboard_path, method: :get, params: {status: "completed"}, class: "btn btn-small"%>
 <%= button_to "Cancelled", admin_dashboard_path, method: :get, params: {status: "cancelled"}, class: "btn btn-small"%>
 
+
+
 <% @orders.each do |order|%>
-<%= link_to "Order ##{order.id}", order_path(order) %><br>
+<%= link_to "Order ##{order.id}", order_path(order) %>
+<p>Order Status: <%= order.status %></p>
+
+  <% if order.status == "ordered" %>
+    <%= button_to "Change Status to Cancel", order_path(order), method: :put, class: "btn orange-btn", params: {status: :cancelled }%>
+    <%= button_to "Change Status to Paid", order_path(order), method: :put, class: "btn orange-btn", params: {status: :paid }%>
+  <% elsif order.status == "paid" %>
+    <%= button_to "Change Status to Cancel", order_path(order), method: :put, class: "btn orange-btn", params: {status: :cancelled }%>
+    <%= button_to "Change Status to Complete", order_path(order), method: :put, class: "btn orange-btn", params: {status: :completed }%>
+
+<% end %>
 <% end %>

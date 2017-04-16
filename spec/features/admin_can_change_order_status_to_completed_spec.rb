@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "As admin" do
-  scenario "they can filter orders by status" do
+  scenario "they can change order status to completed" do
     user = create(:user)
     order_1 = user.orders.create(status: "completed", total: 500.00)
     order_2 = user.orders.create(status: "paid", total: 200.00)
@@ -34,18 +34,11 @@ RSpec.feature "As admin" do
 
     visit admin_dashboard_path
 
-    click_on "Ordered"
-    expect(page).to have_content("Order #3")
-
-    click_on "Paid"
+    click_on "Paid" 
     expect(page).to have_content("Order #2")
+    click_on "Change Status to Complete"
+    visit order_path(order_2)
+    expect(page).to have_content("Order Status: completed")
 
-    click_on "Completed"
-    expect(page).to have_content("Order #1")
-
-    click_on "Cancelled"
-    expect(page).to have_content("Order #4")
-
-  end
-  
-end
+    end 
+  end 
