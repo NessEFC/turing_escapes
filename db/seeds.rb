@@ -10,6 +10,10 @@ EscapeCategory.create(category_id: 2, escape_id: 2)
 
 User.create(username: "booradley", password: "asecretpassword", password_confirmation: "asecretpassword")
 User.create(username: "iadmin", password: "ipass", password_confirmation: "ipass", role: 1)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 32d48abfa9e96a862f30ea857c005647a7586f66
 
 
 User.first.orders.create(status: "paid", total: 200.00)
