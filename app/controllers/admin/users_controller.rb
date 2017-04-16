@@ -9,6 +9,7 @@ class Admin::UsersController < Admin::BaseController
 
   def dashboard
     @user = current_user
+    @orders = Order.all
   end
 
   def update
