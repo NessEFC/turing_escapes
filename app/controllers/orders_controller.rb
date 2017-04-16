@@ -27,10 +27,22 @@ class OrdersController < ApplicationController
   def new
     @order_items = @cart.find_escapes
   end
-  
-  private
 
-  def order_params
-    params.require(:order)  
-  end
+  def update 
+    @order = Order.find(params[:id])
+   
+    if @order.update(status: params[:status])
+      flash[:success] = "Order status updated"
+      redirect_to admin_dashboard_path 
+    else 
+      flash[:alert] = "Nopes"
+    end
+  end 
+  
+  # private
+
+  # def order_params
+  #   binding.pry
+  #   params.require(:order).permit(:status)
+  # end
 end

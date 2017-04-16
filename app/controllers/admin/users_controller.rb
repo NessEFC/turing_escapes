@@ -9,6 +9,13 @@ class Admin::UsersController < Admin::BaseController
 
   def dashboard
     @user = current_user
+    @all_orders = Order.all
+
+    if params[:status]
+      @orders = Order.find_status(params[:status])
+    else
+      @orders = Order.all
+    end
   end
 
   def update
