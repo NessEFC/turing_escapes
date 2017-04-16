@@ -5,12 +5,13 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show, :update, :create, :destroy]
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :edit, :update]
 
   resources :orders, only: [:index, :show, :create]
 
   namespace :admin do
-    resource :dashboard, only: [:show]
+    get '/dashboard', to: 'users#admin_dash'
+    resources :users, only: [:index, :show, :edit, :update]
   end
 
 

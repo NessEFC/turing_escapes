@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @user = current_user
+    @orders = Order.where(user_id: current_user)
   end
 
   def show
@@ -27,10 +27,10 @@ class OrdersController < ApplicationController
   def new
     @order_items = @cart.find_escapes
   end
-  
+
   private
 
   def order_params
-    params.require(:order)  
+    params.require(:order)
   end
 end
