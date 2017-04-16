@@ -10,6 +10,10 @@ Username: <%= current_user.username %>
 
 
 <h3>All Orders</h3>
+<%= form_tag(admin_dashboard_path, :method => "get") do %>
+  <%= label_tag :status %>
+  <%= collection_select :order_id, Order.all, :id, :status %>
+<% end %><br>
 <% @orders.each do |order|%>
 <%= link_to "Order ##{order.id}", order_path(order) %><br>
 <% end %>
