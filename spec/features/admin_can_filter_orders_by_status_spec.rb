@@ -34,16 +34,20 @@ RSpec.feature "As admin" do
 
     visit admin_dashboard_path
 
-    click_on "Ordered"
+    select "ordered", from: "status"
+    click_on "Filter"
     expect(page).to have_content("Order #3")
 
-    click_on "Paid"
+    select "paid", from: "status"
+    click_on "Filter"
     expect(page).to have_content("Order #2")
 
-    click_on "Completed"
+    select "completed", from: "status"
+    click_on "Filter"
     expect(page).to have_content("Order #1")
 
-    click_on "Cancelled"
+    select "cancelled", from: "status"
+    click_on "Filter"
     expect(page).to have_content("Order #4")
 
   end

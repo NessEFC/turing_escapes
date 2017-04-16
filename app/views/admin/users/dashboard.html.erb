@@ -8,18 +8,15 @@ Username: <%= current_user.username %>
 <p>Completed: <%= @all_orders.find_status("completed").count%></p>
 <p>Cancelled: <%= @all_orders.find_status("cancelled").count%></p>
 
-
 <h3>All Orders</h3>
-<%= button_to "Ordered", admin_dashboard_path, method: :get, params: {status: "ordered"}, class: "btn btn-small"%>
-<%= button_to "Paid", admin_dashboard_path, method: :get, params: {status: "paid"}, class: "btn btn-small"%>
-<%= button_to "Completed", admin_dashboard_path, method: :get, params: {status: "completed"}, class: "btn btn-small"%>
-<%= button_to "Cancelled", admin_dashboard_path, method: :get, params: {status: "cancelled"}, class: "btn btn-small"%>
-
-
+<%= form_tag admin_dashboard_path, method: 'get' do %>
+  <%= select_tag("status", options_for_select(["completed", "paid", "cancelled", "ordered"], :selected => params[:status])) %>
+  <%= submit_tag 'Filter' %>
+<% end %>
 
 <% @orders.each do |order|%>
 <%= link_to "Order ##{order.id}", order_path(order) %>
-<p>Order Status: <%= order.status %></p>
+- Order Status: <%= order.status %>
 
   <% if order.status == "ordered" %>
     <%= button_to "Change Status to Cancel", order_path(order), method: :put, class: "btn orange-btn", params: {status: :cancelled }%>
@@ -27,6 +24,6 @@ Username: <%= current_user.username %>
   <% elsif order.status == "paid" %>
     <%= button_to "Change Status to Cancel", order_path(order), method: :put, class: "btn orange-btn", params: {status: :cancelled }%>
     <%= button_to "Change Status to Complete", order_path(order), method: :put, class: "btn orange-btn", params: {status: :completed }%>
+  <% end %>
 
-<% end %>
 <% end %>

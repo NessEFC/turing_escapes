@@ -34,7 +34,8 @@ RSpec.feature "As admin" do
 
     visit admin_dashboard_path
 
-    click_on "Ordered" 
+    select "ordered", from: "status"
+    click_on "Filter"
     expect(page).to have_content("Order #3")
     click_on "Change Status to Paid"
     visit order_path(order_3)
