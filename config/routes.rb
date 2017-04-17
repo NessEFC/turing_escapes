@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: 'users#dashboard'
     resources :users, only: [:edit, :update, :show]
+    resources :escapes, only: [:new, :create, :index]
   end
-
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
