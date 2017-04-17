@@ -10,7 +10,7 @@ Username: <%= current_user.username %>
 
 <h3>All Orders</h3>
 <%= form_tag admin_dashboard_path, method: 'get' do %>
-  <%= select_tag("status", options_for_select(["completed", "paid", "cancelled", "ordered"], :selected => params[:status])) %>
+  <%= select_tag("status", options_for_select(["all", "cancelled", "completed", "ordered", "paid"], :selected => params[:status])) %>
   <%= submit_tag 'Filter' %>
 <% end %>
 
