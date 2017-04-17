@@ -9,8 +9,11 @@
           <li>Description: <%= escape.description %></li>
           <li>Price: $<%= sprintf('%.2f', escape.price) %></li>
           <li>City: <%= escape.city %></li>
-          <%= button_to "Book Escape", cart_path(escape_id: escape.id), class: "btn btn-danger" %><br>
-
+          <% if escape.active %>
+            <%= button_to "Book Escape", cart_path(escape_id: escape.id), class: "btn btn-danger" %><br>
+          <% else %>
+            <h5 class="retired"><strong>This Escape is now retired. You missed out!</strong></h5>
+          <% end %>
         </ul>
     </div>
   <% end %>
