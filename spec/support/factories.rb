@@ -17,7 +17,7 @@ FactoryGirl.define do
 
     image "image.url"
 
-    active true 
+    active true
   end
 
   sequence :category_title do |n|
@@ -36,6 +36,8 @@ FactoryGirl.define do
     username "TheUkrainian"
     password "asecretpassword"
     password_confirmation "asecretpassword"
+    full_name "Sergey Lukyanenko"
+    address "123 Main St, Denver CO 80203"
   end
 
   factory :order do

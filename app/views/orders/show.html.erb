@@ -1,5 +1,8 @@
-
 <h1>Order #<%= @order.id %></h1>
+<% if current_user.admin? %>
+  Customer: <%= @order.user.full_name %><br>
+  Address: <%= @order.user.address %><br>
+<% end %>
 
 Order Date: <%= @order.format_created_at %><br>
 Order Status: <%= @order.status %>
@@ -11,6 +14,8 @@ Total Price: $<%= @order.format_total%><br>
 
 <% @order.order_escapes.each do |order_escape| %>
  <%= link_to Escape.find(order_escape.escape_id).name, escape_path(order_escape.escape.id)%>
-  <p> Quantity: <%= order_escape.quantity%> Subtotal: $ <%= order_escape.format_total%><br><br>
+    Quantity: <%= order_escape.quantity%><br>
+    Escape Price: $<%= order_escape.escape.format_price %><br>
+    Subtotal: $<%= order_escape.format_total%><br><br>
 <% end %>
 <br>
