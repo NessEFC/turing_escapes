@@ -1,8 +1,8 @@
 class Admin::UsersController < Admin::BaseController
-  
-  def show 
-  end 
-  
+
+  def show
+  end
+
   def edit
     @user = current_user
   end
@@ -11,7 +11,9 @@ class Admin::UsersController < Admin::BaseController
     @user = current_user
     @all_orders = Order.all
 
-    if params[:status]
+    if params[:status] == "all"
+      @orders = Order.all
+    elsif params[:status]
       @orders = Order.find_status(params[:status])
     else
       @orders = Order.all
@@ -27,9 +29,9 @@ class Admin::UsersController < Admin::BaseController
       render :edit
     end
   end
-  
+
   private
   def admin_params
-    params.require(:user).permit(:username)  
+    params.require(:user).permit(:username)
   end
-end 
+end
