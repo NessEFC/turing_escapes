@@ -17,6 +17,7 @@ RSpec.feature "As an admin" do
     fill_in "escape[description]", with: "Ghengis Khan was here"
     fill_in "escape[city]", with: "Ulaanbaatar"
     fill_in "escape[image]", with: "url"
+    
     select "outdoor", :from => 'escape[id]'
 
     click_on "Create Escape"

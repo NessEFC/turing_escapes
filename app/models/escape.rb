@@ -15,4 +15,5 @@ class Escape < ApplicationRecord
   def format_price
     sprintf('%.2f', price)
   end
+
 end

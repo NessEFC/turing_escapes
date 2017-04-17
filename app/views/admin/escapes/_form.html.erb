@@ -17,7 +17,6 @@
 <%= f.label :image %>
 <%= f.text_field :image %><br>
 <%= f.label :category %>
-<!-- <%= f.collection_select :id, Category.all, :id, :title, :required => true %> -->
   <% Category.all.each do |category| %>
   <div>
     <%= check_box_tag :category_ids, category.id, @escape.categories.include?(category), :name => 'escape[category_ids][]' %>
