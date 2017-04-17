@@ -9,8 +9,12 @@ class Admin::EscapesController < Admin::BaseController
   end
 
   def create
+
     @escape = Escape.new(escape_params)
     if @escape.save
+      params[:escape][:category_ids].each do |category_id|
+        @escape.escape_categories.create(category_id: category_id)
+      end
       flash[:success] = "Nice package!"
       redirect_to admin_escapes_path
     else
@@ -22,7 +26,7 @@ class Admin::EscapesController < Admin::BaseController
 private
 
   def escape_params
-    params.require(:escape).permit(:name, :city, :description, :price, :image, :category_id)
+    params.require(:escape).permit(:name, :city, :description, :price, :image)
   end
 
 end

@@ -17,12 +17,13 @@ RSpec.feature "As an admin" do
     fill_in "escape[description]", with: "Ghengis Khan was here"
     fill_in "escape[city]", with: "Ulaanbaatar"
     fill_in "escape[image]", with: "url"
-    fill_in "escape[categories]", with: "outdoor"
+    select "outdoor", :from => 'escape[id]'
 
     click_on "Create Escape"
 
-    expect(current_path).to eq(admin_escapes_path)
 
+    expect(current_path).to eq(admin_escapes_path)
+    expect(page).to have_content("Nice package!")
 # - The photo is optional. If not present, a stand-in photo is used. (PAPERCLIP)
 
   end
