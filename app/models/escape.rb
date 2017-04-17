@@ -10,4 +10,8 @@ class Escape < ApplicationRecord
   has_many :categories, through: :escape_categories
   has_many :order_escapes
   has_many :orders, through: :order_escapes
+
+  def format_price
+    sprintf('%.2f', price)
+  end
 end

@@ -6,11 +6,11 @@ class Order < ApplicationRecord
   scope :find_status, -> (status) {where status: status}
 
   def format_created_at
-    created_at.strftime("%B %e, %Y")
+    created_at.strftime("%B %e, %Y %I:%M %p")
   end
 
   def format_updated_at
-    updated_at.strftime("%B %e, %Y")
+    updated_at.strftime("%B %e, %Y %I:%M %p")
   end
 
   def subtotal(escape_id, quantity)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415201253) do
+ActiveRecord::Schema.define(version: 20170417194227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 20170415201253) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.integer  "role",                  default: 0
+    t.string   "full_name"
+    t.string   "address"
   end
 
   add_foreign_key "escape_categories", "categories"
