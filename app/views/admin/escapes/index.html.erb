@@ -13,6 +13,7 @@
     <td><%= link_to escape.name, escape_path(escape) %></td>
     <td> <%= escape.description %> </td>
     <td> <%= escape.status %> </td>
+    <td> <%= link_to "Edit", edit_admin_escape_path(escape) %></td>
   </tr>
   <% end %>
 

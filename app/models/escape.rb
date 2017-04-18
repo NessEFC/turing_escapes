@@ -14,6 +14,8 @@ class Escape < ApplicationRecord
   has_many :order_escapes
   has_many :orders, through: :order_escapes
 
+  #enum active: %w(active retired)
+
   def format_price
     sprintf('%.2f', price)
   end
@@ -26,4 +28,11 @@ class Escape < ApplicationRecord
     end
   end
 
+  def update_status(params)
+    if params == "active"
+      update(active: true)
+    else
+      update(active: false)
+    end
+  end
 end
