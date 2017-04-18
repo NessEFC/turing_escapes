@@ -12,6 +12,6 @@ RSpec.feature 'As a visitor' do
     expect(page).to have_field("Username")
     expect(page).to have_field("Password")
 
-    expect(page).to have_button("Create Account")
+    expect(page).to have_link("Create Account")
   end
 end

@@ -4,7 +4,7 @@ RSpec.feature "As an admin" do
   scenario "they can create escapes" do
 
     admin = User.create(username: "iadmin", full_name: "colleen", address: "8408 S. Elwood Tulsa, OK 74132", password: "ipass",
-    password_confirmation: "ipass", role: 1)
+    password_confirmation: "ipass", role: 1, image: "url")
 
     category = Category.create(title: "outdoor")
 

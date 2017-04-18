@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "As admin" do
   scenario "they can log in" do
 
-  User.create(username: "iadmin", password: "ipass", password_confirmation: "ipass", role: 1)
+  User.create(username: "iadmin", password: "ipass", password_confirmation: "ipass", role: 1, image: "url")
  
   visit login_path
   fill_in "session[username]", with: "iadmin"

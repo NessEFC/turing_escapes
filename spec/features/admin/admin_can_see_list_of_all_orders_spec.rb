@@ -15,13 +15,13 @@ RSpec.feature "As admin" do
     order_escape_2 = user.orders.last.order_escapes.create(escape_id: escape_2.id, 
                                                           quantity: 1, total: 200.00)                                                      
     admin = User.create(username: "iadmin", password: "ipass", 
-                        password_confirmation: "ipass", role: 1)
+                        password_confirmation: "ipass", role: 1, image: "url")
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     visit admin_dashboard_path
 
-    expect(page).to have_link("Order #1")
-    expect(page).to have_link("Order #2")
+    expect(page).to have_link("#1")
+    expect(page).to have_link("#2")
   end
 end
