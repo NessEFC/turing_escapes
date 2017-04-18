@@ -28,41 +28,6 @@ $success: #008000;
   box-sizing: border-box;
 }
 
-// .login {
-//   background-color: rgba(191, 216, 227, .4);
-//   border: 1px solid rgba(191, 216, 227, .8);
-//   border-bottom-right-radius: 5px;
-//   border-bottom-left-radius: 5px;
-//   padding: 10px;
-//   margin-bottom: 10px;
-// }
-
-// .login > div {
-//   padding: 5px 0;
-// }
-
-// input[type="submit"] {
-//   border: 1px solid rgba(191, 216, 227, .8);
-//   border-radius: 5px;
-//   color: #fff;
-//   background-color: rgb(54, 134, 169);
-//   font-size: 110%;
-// }
-
-// input[type="text"],
-// input[type="password"] {
-//   border: 1px solid rgba(191, 216, 227, .8);
-//   padding: 5px;
-//   border-radius: 5px;
-//   font-size: 110%;
-//   width: 20%;
-// }
-
-// .actions a {
-//   font-size: 80%;
-// }
-
-
 .element {
   display: flex;
 }
@@ -101,3 +66,206 @@ $success: #008000;
   color: red;
   font-size: 20px;
 }
+
+//------------------------
+//login form
+.form-2 {
+    /* Size and position */
+    width: 440px;
+    margin: 60px auto 30px;
+    padding: 15px;
+    position: relative;
+
+    /* Styles */
+    background: #fffaf6;
+    border-radius: 4px;
+    color: #7e7975;
+    box-shadow:
+        0 2px 2px rgba(0,0,0,0.2),        
+        0 1px 5px rgba(0,0,0,0.2),        
+        0 0 0 12px rgba(255,255,255,0.4); 
+}
+
+.form-2 h1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #bdb5aa;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EBE6E2;
+    text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.form-2 h1 .log-in,
+.form-2 h1 .create-account {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.form-2 h1 .log-in {
+    color: #6c6763;
+    padding-right: 2px;
+}
+
+.form-2 h1 .create-account :hover {
+   color: #ffb347;
+    padding-left: 2px;
+}
+
+.form-2 .float {
+    width: 100%;
+    float: left;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,1);
+}
+
+.form-2 input[type=text],
+.form-2 input[type=password] {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 3px solid #ebe6e2;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.form-2 input[type=submit] {
+    /* Size and position */
+    width: 49%;
+    height: 38px;
+    float: left;
+    position: relative;
+
+    /* Styles */
+    box-shadow: inset 0 1px rgba(255,255,255,0.3);
+    border-radius: 3px;
+    cursor: pointer;
+
+    /* Font styles */
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 38px; /* Same as height */
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-2 input[type=submit] {
+    margin-left: 1%;
+    background: linear-gradient(#fbd568, #ffb347);
+    border: 1px solid #f4ab4c;
+    color: #996319;
+    text-shadow: 0 1px rgba(255,255,255,0.3);
+}
+
+
+// end of login form
+//-----------------------
+// orders by status chart
+dl {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  padding: 20px;
+}
+
+dt {
+  align-self: flex-start;
+  width: 100%;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-left: 130px;
+}
+
+.text {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 130px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  justify-content: flex-end;
+}
+.percentage {
+  font-size: .8em;
+  line-height: 1;
+  text-transform: uppercase;
+  width: 100%;
+  height: 40px;
+  margin-left: 130px;
+  background: repeating-linear-gradient(
+  to right,
+  #ddd,
+  #ddd 1px,
+  #fff 1px,
+  #fff 5%
+);
+  
+  &:after {
+    content: "";
+    display: block;
+    background-color: #3d9970;
+    width: 50px;
+    margin-bottom: 10px;
+    height: 90%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color .3s ease;
+    cursor: pointer;
+  }
+  &:hover,
+  &:focus {
+    &:after {
+       background-color: #aaa; 
+    }
+  }
+}
+
+@for $i from 0 through 100 {
+  .percentage-#{$i} {
+    &:after {
+      $value: ($i * 5%);
+      width: $value;
+    }
+  }
+}
+// end of orders by status chart
+//-----------------------
+
+table {
+  width: 250%;
+  margin: 30px auto;
+  table-layout: auto;
+}
+
+ tr, td  {
+    text-align: center;
+    border-top: 0px hidden #ddd;
+}
+
+.w {
+  width: 400px;
+}
+
+table tr td {
+    width: 170px;
+}
+

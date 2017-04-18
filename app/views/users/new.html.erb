@@ -1,17 +1,26 @@
-<h1>Create A New Account </h1>
+<div class="form-2">
+<h1><span class="log-in">Create A New Account</span></h1>
 
 
 <%= form_for(@user) do |f| %>
+  <p class="float">
+    <%= f.label :username %>
+    <%= f.text_field :username, placeholder: "Username" %>
+  </p>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <p class="float">
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </p>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <p class="float">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+  </p>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit 'Submit' %>
-
+  <p class="clearfix"> 
+    <%= f.submit 'Submit' %>
+  </p>
   <% end %>
+
+</div>
