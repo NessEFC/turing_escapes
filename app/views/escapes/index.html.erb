@@ -5,7 +5,7 @@
     <div class="escape">
       <h4><%= link_to escape.name, escape_path(escape) %></h4>
         <ul>
-          <%= image_tag escape.photo.url(:medium) %>
+          <%= image_tag escape.photo %>
           <li>Description: <%= escape.description %></li>
           <li>Price: $<%= sprintf('%.2f', escape.price) %></li>
           <li>City: <%= escape.city %></li>
