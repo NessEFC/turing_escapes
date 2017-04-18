@@ -1,0 +1,19 @@
+<h3>All Escapes</h3>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Status</th>
+  </tr>
+  <% @escapes.each do |escape| %>
+  <tr>
+    <td><div id="image_<%= escape.id %>"> <%= image_tag escape.image %> <div></td>
+    <td><%= link_to escape.name, escape_path(escape) %></td>
+    <td> <%= escape.description %> </td>
+    <td> <%= escape.status %> </td>
+  </tr>
+  <% end %>
+
+</table>
