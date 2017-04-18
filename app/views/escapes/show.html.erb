@@ -2,7 +2,7 @@
 
 <h3><%= @escape.city %></h3>
 
-<%= image_tag @escape.photo %><br>
+<%= image_tag @escape.photo.url(:medium) %><br>
 $<%= @escape.format_price %><br>
 <%= @escape.description %>
 <% if @escape.active %>

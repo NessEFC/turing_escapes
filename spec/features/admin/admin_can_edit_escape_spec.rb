@@ -15,7 +15,6 @@ RSpec.feature "as a logged in Admin" do
 
     fill_in "escape[name]", with: "Rough Sunset"
     fill_in "escape[description]", with: "The roughest of sunsets"
-    fill_in "escape[image]", with: "sunset.url"
     select "retired", :from => "escape[status]"
     click_on "Update"
 
@@ -25,10 +24,4 @@ RSpec.feature "as a logged in Admin" do
     expect(page).to have_content("Retired")
 
   end
-
 end
-
-# When I visit "admin/items"
-# And I click "Edit"
-# Then my current path should be "/admin/items/:ITEM_ID/edit"
-# And I should be able to upate title, description, image, and status
