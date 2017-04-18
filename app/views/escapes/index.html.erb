@@ -1,5 +1,4 @@
 <h1>Escapes</h1>
-
 <ul>
   <% @escapes.each do |escape| %>
     <div class="escape">
@@ -18,3 +17,5 @@
     </div>
   <% end %>
 </ul>
+
+<%= will_paginate @escape %>
