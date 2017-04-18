@@ -9,7 +9,7 @@
   </tr>
   <% @escapes.each do |escape| %>
   <tr>
-    <td><div id="image_<%= escape.id %>"> <%= image_tag escape.image %> <div></td>
+    <td><div id="image_<%= escape.id %>"> <%= image_tag escape.photo.url(:thumb) %><div></td>
     <td><%= link_to escape.name, escape_path(escape) %></td>
     <td> <%= escape.description %> </td>
     <td> <%= escape.status %> </td>
