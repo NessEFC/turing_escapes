@@ -247,9 +247,13 @@ dt {
     }
   }
 }
-// end of orders by status chart
-//-----------------------
 
+.status {
+
+}
+// end of orders by status chart
+//------------------------------
+// All orders table
 table {
   width: 250%;
   margin: 30px auto;
@@ -266,6 +270,28 @@ table {
 }
 
 table tr td {
-    width: 170px;
+    width: 150px;
 }
 
+table tr :nth-child(1) {
+padding-left: 9px;
+}
+
+
+// end of all Orders table
+//------------------------
+// Admin image
+.admin_image {
+  height: 65%;
+    width: 65%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+// end of admin image
+//------------------
+// Drop-down list
+
+.drop-down {
+  padding-left: 50px;
+}
+//------------------
