@@ -16,4 +16,12 @@ class Escape < ApplicationRecord
     sprintf('%.2f', price)
   end
 
+  def status
+    if active
+      "Current"
+    else
+      "Retired"
+    end
+  end
+
 end
