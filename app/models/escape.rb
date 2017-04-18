@@ -6,11 +6,12 @@ class Escape < ApplicationRecord
 
   validates :city, presence: true
   validates :image, presence: true
-
   has_many :escape_categories
   has_many :categories, through: :escape_categories
   has_many :order_escapes
   has_many :orders, through: :order_escapes
+
+  #enum active: %w(active retired)
 
   def format_price
     sprintf('%.2f', price)
@@ -24,4 +25,11 @@ class Escape < ApplicationRecord
     end
   end
 
+  def update_status(params)
+    if params == "active"
+      update(active: true)
+    else
+      update(active: false)
+    end
+  end
 end
