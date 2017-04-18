@@ -45,7 +45,7 @@ class Admin::EscapesController < Admin::BaseController
 private
 
   def escape_params
-    params.require(:escape).permit(:name, :city, :description, :price, :image)
+    params.require(:escape).permit(:name, :city, :description, :price, :photo)
   end
 
 end

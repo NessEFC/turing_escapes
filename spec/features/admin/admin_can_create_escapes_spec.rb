@@ -16,7 +16,6 @@ RSpec.feature "As an admin" do
     fill_in "escape[price]", with: 4500.00
     fill_in "escape[description]", with: "Ghengis Khan was here"
     fill_in "escape[city]", with: "Ulaanbaatar"
-    fill_in "escape[image]", with: "url"
 
     find(:css, "#category_ids[value='1']").set(true)
 
@@ -25,7 +24,6 @@ RSpec.feature "As an admin" do
 
     expect(current_path).to eq(admin_escapes_path)
     expect(page).to have_content("Nice package!")
-# - The photo is optional. If not present, a stand-in photo is used. (PAPERCLIP)
 
   end
 end

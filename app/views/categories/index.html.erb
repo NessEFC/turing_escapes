@@ -7,7 +7,7 @@
           <li><%= escape.description %></li>
           <li><%= escape.price %></li>
           <li><%= escape.city %></li>
-          <li><%= image_tag escape.photo %></li>
+          <li><%= image_tag escape.photo.url(:medium) %></li>
         </ul>
     </div>
   <% end %>
