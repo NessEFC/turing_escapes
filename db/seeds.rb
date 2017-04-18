@@ -1,8 +1,8 @@
-Escape.create(name: "Gentle Dawn", description: "The gentlest of dawns.", city: "Denver", price: 200.00, image: "gentle_dawn.jpg")
+Escape.create(name: "Gentle Dawn", description: "The gentlest of dawns.", city: "Denver", price: 200.00, photo_file_name: "gentle_dawn.jpg")
 
-Escape.create(name: "Basement Dweller", description: "Enjoy the fluorescent lighting!", city: "Denver", price: 1.00, image: "basement_dweller.jpg")
+Escape.create(name: "Basement Dweller", description: "Enjoy the fluorescent lighting!", city: "Denver", price: 1.00, photo_file_name: "basement_dweller.jpg")
 
-Escape.create(name: "The Old Folks Home", description: "Why not visit grandpa?", city: "Tampa Bay", price: 599.99, image: "grandpa.jpg", active: false)
+Escape.create(name: "The Old Folks Home", description: "Why not visit grandpa?", city: "Tampa Bay", price: 599.99, photo_file_name: "grandpa.jpg", active: false)
 
 Category.create(title: "Outdoors")
 Category.create(title: "Indoors")
