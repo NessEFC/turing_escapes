@@ -1,32 +1,32 @@
-  <h1 class="text-center">Escapes</h1>
-  <br>
+<h1 class="text-center">Escapes</h1>
+<br>
 
-  <% @escapes.each do |escape| %>
+<% @escapes.each do |escape| %>
 <div class="container">
-  <div class="media col-md-3">
-    <figure class= "pull-left">
-      <%= image_tag escape.photo.url(:medium), class: "media-object img-rounded img-responsive" %>
-      <br>
-    </figure>
+<div class="media col-md-3">
+  <figure class= "pull-left">
+    <%= image_tag escape.photo.url(:medium), class: "media-object img-rounded img-responsive" %>
+    <br>
+  </figure>
+</div>
+
+
+<div class="col-md-6">
+  <h4 class="list-group-item-heading"><%= link_to escape.name, escape_path(escape) %></h4>
+  <div class= "list-group_item_text">
+    <p>Description: <%= escape.description %></p>
+    <p>Price: $<%= sprintf('%.2f', escape.price) %></p>
+    <p>City: <%= escape.city %></p>
   </div>
+</div>
 
-
-  <div class="col-md-6">
-    <h4 class="list-group-item-heading"><%= link_to escape.name, escape_path(escape) %></h4>
-    <div class= "list-group_item_text">
-      <p>Description: <%= escape.description %></p>
-      <p>Price: $<%= sprintf('%.2f', escape.price) %></p>
-      <p>City: <%= escape.city %></p>
-    </div>
-  </div>
-
-  <div class="col-md-3 text-center">
-    <div class="buttons">
-      <% if escape.active %>
-        <%= button_to "Book Escape", cart_path(escape_id: escape.id), class: "btn btn-danger" %><br>
-      <% else %>
-        <h6 class="retired"> This Escape is now retired. You missed out!</h6>
-      <% end %>
+<div class="col-md-3 text-center">
+  <div class="buttons">
+    <% if escape.active %>
+      <%= button_to "Book Escape", cart_path(escape_id: escape.id), class: "btn btn-danger" %><br>
+    <% else %>
+      <h6 class="retired"> This Escape is now retired. You missed out!</h6>
+    <% end %>
     </div>
   </div>
 </div>
