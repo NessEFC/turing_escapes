@@ -28,7 +28,7 @@ RSpec.feature "As admin" do
                                                           quantity: 1, total: 1.00)  
                                                                                                             
     admin = User.create(username: "iadmin", password: "ipass", 
-                        password_confirmation: "ipass", role: 1)
+                        password_confirmation: "ipass", role: 1, image: "url")
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
@@ -37,8 +37,8 @@ RSpec.feature "As admin" do
 
     select "paid", from: "status"
     click_on "Filter"
-    expect(page).to have_content("Order #2")
-    click_on "Change Status to Complete"
+    expect(page).to have_content("#2")
+    click_on "Complete"
     visit order_path(order_2)
     expect(page).to have_content("Order Status: completed")
 

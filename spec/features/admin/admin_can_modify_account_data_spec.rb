@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "As admin" do
   scenario "they can modify account data" do
-    admin = User.create(username: "iadmin", password: "ipass", password_confirmation: "ipass", role: 1)
+    admin = User.create(username: "iadmin", password: "ipass", password_confirmation: "ipass", role: 1, image: "url")
 
      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 

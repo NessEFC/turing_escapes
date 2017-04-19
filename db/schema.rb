@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20170418215257) do
     t.integer  "role",                  default: 0
     t.string   "full_name"
     t.string   "address"
+    t.string   "image"
   end
 
   add_foreign_key "escape_categories", "categories"

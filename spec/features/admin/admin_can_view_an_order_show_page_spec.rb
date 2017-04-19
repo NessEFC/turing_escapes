@@ -13,7 +13,7 @@ RSpec.feature "As an admin," do
     order_escape_2 = user.orders.first.order_escapes.create(escape_id: escape_2.id, quantity: 1, total: 200.00)
 
     admin = User.create(username: "iadmin", password: "ipass",
-                        password_confirmation: "ipass", role: 1)
+                        password_confirmation: "ipass", role: 1, image: "url")
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
