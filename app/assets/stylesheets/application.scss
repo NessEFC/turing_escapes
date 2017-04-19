@@ -82,9 +82,9 @@ $success: #008000;
     border-radius: 4px;
     color: #7e7975;
     box-shadow:
-        0 2px 2px rgba(0,0,0,0.2),        
-        0 1px 5px rgba(0,0,0,0.2),        
-        0 0 0 12px rgba(255,255,255,0.4); 
+        0 2px 2px rgba(0,0,0,0.2),
+        0 1px 5px rgba(0,0,0,0.2),
+        0 0 0 12px rgba(255,255,255,0.4);
 }
 
 .form-2 h1 {
@@ -218,7 +218,7 @@ dt {
   #fff 1px,
   #fff 5%
 );
-  
+
   &:after {
     content: "";
     display: block;
@@ -235,7 +235,7 @@ dt {
   &:hover,
   &:focus {
     &:after {
-       background-color: #aaa; 
+       background-color: #aaa;
     }
   }
 }
@@ -309,5 +309,12 @@ table tr :nth-child(1) {
 
 .edit-column {
   margin-left: 20px;
+}
+
+.jumbotron {
+  background: url('travel5.jpg');
+  color: #117ca0;
+  height: 400px;
+  text-align: center;
 }
 
