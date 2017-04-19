@@ -4,7 +4,7 @@
   <div class="cart items">
     <% @escapes.each do |escape| %>
       <h4><%= escape.name %></h4>
-      <p><%= image_tag escape.image %></p>
+      <p><%= image_tag escape.photo, class: :image %></p>
       <p>City: <%= escape.city %></p>
       <p>Price: $<%= escape.price %></p>
       <p>Description: <%= escape.description %></p>

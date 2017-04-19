@@ -1,0 +1,18 @@
+<h1>Edit Escape</h1>
+<%= form_for(@escape, url: admin_escape_path(@escape), html: {multipart: true}, method: :put) do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+
+<%= f.label :description %>
+<%= f.text_field :description %><br>
+
+<%= f.label :photo %>
+<%= f.file_field :photo %><br>
+
+<%= f.label :status %>
+<%= f.select :status, [["active"], ["retired"]] %><br>
+
+<%= f.submit %>
+
+<% end %>

@@ -1,12 +1,12 @@
-Escape.create(name: "Gentle Dawn", description: "The gentlest of dawns.", city: "Denver", price: 200.00, image: "gentle_dawn.jpg")
+Escape.create(name: "Gentle Dawn", description: "The gentlest of dawns.", city: "Denver", price: 200.00, photo: File.new(Rails.root + "app/assets/images/gentle_dawn.jpg"))
 
-Escape.create(name: "Basement Dweller", description: "Enjoy the fluorescent lighting!", city: "Denver", price: 1.00, image: "basement_dweller.jpg")
+Escape.create(name: "Basement Dweller", description: "Enjoy the fluorescent lighting!", city: "Denver", price: 1.00, photo: File.new(Rails.root + "app/assets/images/basement_dweller.jpg"))
 
-Escape.create(name: "The Old Folks Home", description: "Why not visit grandpa?", city: "Tampa Bay", price: 599.99, image: "grandpa.jpg", active: false)
+Escape.create(name: "The Old Folks Home", description: "Why not visit grandpa?", city: "Tampa Bay", price: 599.99, photo: File.new(Rails.root + "app/assets/images/grandpa.jpg"), active: false)
 
-Escape.create(name: "A week in Hospital", description: "Comfortable bed and three meals a day", city: "Miami", price: 1099.99, image: "hospital.jpg")
+Escape.create(name: "A week in Hospital", description: "Comfortable bed and three meals a day", city: "Miami", price: 1099.99, photo: File.new(Rails.root + "app/assets/images/hospital.jpg"))
 
-Escape.create(name: "Spend Intermission in a Movie Theater", description: "Get one ticket and stay in a movie theater for the whole week", city: "St. Louis", price: 12.99, image: "theater.jpg")
+Escape.create(name: "Spend Intermission in a Movie Theater", description: "Get one ticket and stay in a movie theater for the whole week", city: "St. Louis", price: 12.99, photo: File.new(Rails.root + "app/assets/images/theater.jpg"))
 
 Category.create(title: "Outdoors")
 Category.create(title: "Indoors")
