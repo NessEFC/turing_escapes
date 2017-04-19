@@ -9,7 +9,6 @@ class Admin::EscapesController < Admin::BaseController
   end
 
   def create
-
     @escape = Escape.new(escape_params)
     if @escape.save
       params[:escape][:category_ids].each do |category_id|

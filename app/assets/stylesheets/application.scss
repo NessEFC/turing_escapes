@@ -62,19 +62,6 @@ $success: #008000;
 //   font-size: 80%;
 // }
 
-
-.element {
-  display: flex;
-}
-
-.table {
-  width: 91%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 50px;
-}
-
 .buttons {
   justify-content: center;
   display: flex;
@@ -92,8 +79,13 @@ $success: #008000;
   color: white;
 }
 
+.img-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
 .cart-total,
-.dammit-marrisa {
+.dammit-marissa {
   text-align: right;
 }
 
