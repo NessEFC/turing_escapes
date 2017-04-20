@@ -6,7 +6,7 @@
       <h4><%= escape.name %></h4>
 
       <div class="img-btn">
-        <p><%= image_tag escape.photo.url %></p>
+        <p class="image"><%= image_tag escape.photo.url, class: "media-object img-rounded img-responsive" %></p>
 
         <div class="buttons">
           <%= button_to "Increase Quantity", cart_path({escape_id: escape.id}), method: :put, class: "btn orange-btn", params: {quantity: :increase} %>
