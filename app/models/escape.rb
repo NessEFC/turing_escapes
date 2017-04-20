@@ -5,7 +5,7 @@ class Escape < ApplicationRecord
   validates :price, presence: true, :numericality => {:greater_than => 0}
   validates :city, presence: true
 
-  has_attached_file :photo, styles: { medium: "360x207>", thumb: "100x58>" }, default_url: ActionController::Base.helpers.asset_path("default_escape.png")
+  has_attached_file :photo, styles: { medium: "360x207>", thumb: "100x58>" }, default_url: ("http://img.deusm.com/ifsecglobal/2013/05/559923/155347_002306.jpg")
   validates_attachment :photo,
     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
