@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ html body {
+  background: #ece9e6; /* fallback for old browsers */
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+ }
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
