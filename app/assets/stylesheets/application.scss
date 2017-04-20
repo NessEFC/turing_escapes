@@ -57,6 +57,11 @@ $success: #008000;
   color: white;
 }
 
+.img-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
 .cart-total,
 .dammit-marrisa {
   text-align: right;
@@ -308,13 +313,23 @@ table tr :nth-child(1) {
 }
 
 .edit-column {
-  margin-left: 20px;
+  // margin-left: 10px;
 }
 
 .jumbotron {
-  background: url('travel5.jpg');
-  color: #117ca0;
+  background: url('Turing.png');
   height: 400px;
+}
+
+.escape {
+  border: #e0e2e5;
+}
+
+.admin-escapes-table {
+  width: 100%;
+}
+
+.admin-escapes-table th {
   text-align: center;
 }
 
