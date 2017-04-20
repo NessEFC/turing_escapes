@@ -1,6 +1,7 @@
 <% if current_page?(root_path) %>
   <%= render partial: 'layouts/header' %>
 <% end %>
+
 <h1 class="text-center">Escapes</h1>
 <br>
 
@@ -35,6 +36,5 @@
 </div>
 <hr>
 <% end %>
-
 
 <%= will_paginate @escape %>
