@@ -21,10 +21,10 @@ User.create(username: "iadmin", password: "ipass", password_confirmation: "ipass
 User.create(username: "booradley", password: "pass", password_confirmation: "pass", full_name: "Booseph Radley III", address: "111 Mockingbird Lane, Phoenix AZ 90000")
 
 User.last.orders.create(status: "paid", total: 200.00)
-User.last.orders.create(status: "completed", total: 1399.98)
+User.last.orders.create(status: "completed", total: 225.98)
 
 User.last.orders.first.order_escapes.create(escape_id: Escape.first.id, quantity: 1, total: 200.00)
-User.last.orders.last.order_escapes.create(escape_id: Escape.last.id, quantity: 2, total: 1199.98)
+User.last.orders.last.order_escapes.create(escape_id: Escape.last.id, quantity: 2, total: 25.98)
 User.last.orders.last.order_escapes.create(escape_id: Escape.first.id, quantity: 1, total: 200.00)
 
 puts "Seeds Updated! Nice work team..."

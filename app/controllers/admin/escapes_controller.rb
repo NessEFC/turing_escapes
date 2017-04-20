@@ -1,4 +1,5 @@
 class Admin::EscapesController < Admin::BaseController
+  before_action :set_escape, only: [:edit, :update]
 
   def index
     @escapes = Escape.all
@@ -28,11 +29,9 @@ class Admin::EscapesController < Admin::BaseController
   end
 
   def edit
-    @escape = Escape.find(params[:id])
   end
 
   def update
-    @escape = Escape.find(params[:id])
     if @escape.update(escape_params)
       @escape.update_status(params[:escape][:status])
       flash[:success] = "Successfully updated escape"
@@ -43,6 +42,10 @@ class Admin::EscapesController < Admin::BaseController
   end
 
 private
+
+  def set_escape
+    @escape = Escape.find(params[:id])
+  end
 
   def escape_params
     params.require(:escape).permit(:name, :city, :description, :price, :photo)
